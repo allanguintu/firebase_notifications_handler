@@ -651,6 +651,7 @@ class _FirebaseNotificationsHandlerState
       _notificationHandler(message, appState: AppState.open);
 
   /// [_onBackgroundMessage] callback for the notification
+  @pragma('vm:entry-point')
   static Future<void> _onBackgroundMessage(RemoteMessage message) =>
       _notificationHandler(message, appState: AppState.terminated);
 
