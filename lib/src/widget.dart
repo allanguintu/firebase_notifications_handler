@@ -557,7 +557,8 @@ class _FirebaseNotificationsHandlerState
     Map<String, dynamic>? payload,
     TZDateTime? scheduledDateTime,
     bool shouldForceInitNotifications = false,
-    UILocalNotificationDateInterpretation?
+
+     UILocalNotificationDateInterpretation?
         uiLocalNotificationDateInterpretation,
     AndroidScheduleMode? androidScheduleMode,
     DateTimeComponents? matchDateTimeComponents,

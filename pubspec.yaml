@@ -26,13 +26,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  http: ^1.2.2
-  path_provider: ^2.1.4
-  firebase_messaging: ^15.1.2
+  http: ^1.5.0
+  path_provider: ^2.1.5
+  firebase_messaging: ^16.0.1
   flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 false_secrets:
   - /example/lib/firebase_options.dart

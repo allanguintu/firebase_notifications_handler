@@ -35,7 +35,7 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         elevation: _defaultElevation,
         systemOverlayStyle: systemUiOverlayStyle,
-        color: scaffoldBackgroundColor,
+        backgroundColor: scaffoldBackgroundColor,
         iconTheme: IconThemeData(color: textColor),
         actionsIconTheme: IconThemeData(color: textColor),
         titleTextStyle: TextStyle(
@@ -56,7 +56,7 @@ class AppTheme {
       //   selectionColor: accentColor?.withOpacity(0.75),
       //   selectionHandleColor: accentColor?.withOpacity(0.75),
       // ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         elevation: _defaultElevation,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
