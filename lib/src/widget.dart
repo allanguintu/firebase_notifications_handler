@@ -557,9 +557,6 @@ class _FirebaseNotificationsHandlerState
     Map<String, dynamic>? payload,
     TZDateTime? scheduledDateTime,
     bool shouldForceInitNotifications = false,
-
-     UILocalNotificationDateInterpretation?
-        uiLocalNotificationDateInterpretation,
     AndroidScheduleMode? androidScheduleMode,
     DateTimeComponents? matchDateTimeComponents,
   }) async {
@@ -588,11 +585,6 @@ class _FirebaseNotificationsHandlerState
         'androidScheduleMode cannot be null when scheduledDateTime is not null',
       );
 
-      assert(
-        uiLocalNotificationDateInterpretation != null,
-        'uiLocalNotificationDateInterpretation cannot be null when scheduledDateTime is not null',
-      );
-
       try {
         await _flutterLocalNotificationsPlugin!.zonedSchedule(
           id,
@@ -603,8 +595,6 @@ class _FirebaseNotificationsHandlerState
           payload: payloadStr,
           androidScheduleMode: androidScheduleMode!,
           matchDateTimeComponents: matchDateTimeComponents,
-          uiLocalNotificationDateInterpretation:
-              uiLocalNotificationDateInterpretation!,
         );
       } catch (e, s) {
         log<FirebaseNotificationsHandler>(error: e, stackTrace: s);
