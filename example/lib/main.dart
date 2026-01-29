@@ -1,7 +1,6 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_notifications_handler/firebase_notifications_handler.dart';
 import 'package:flutter/material.dart';
-import 'package:notifications_handler_demo/firebase_options.dart';
+// import 'package:notifications_handler_demo/firebase_options.dart';
 import 'package:notifications_handler_demo/screens/splash_screen.dart';
 import 'package:notifications_handler_demo/utils/app_theme.dart';
 import 'package:notifications_handler_demo/utils/globals.dart';
@@ -10,7 +9,7 @@ import 'package:notifications_handler_demo/utils/route_generator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const _MainApp());
 }
 
