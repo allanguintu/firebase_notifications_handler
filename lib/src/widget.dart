@@ -997,12 +997,12 @@ class _FirebaseNotificationsHandlerState extends State<FirebaseNotificationsHand
     (() async {
       if (widget.requestPermissionsOnInitialize) {
         await (widget.permissionGetter?.call(_fcm) ?? _fcm.requestPermission());
-      }
 
-      try {
-        _fcmToken = await initializeFcmToken(vapidKey: widget.vapidKey);
-      } catch (e, s) {
-        log<FirebaseNotificationsHandler>(error: e, stackTrace: s);
+        try {
+          _fcmToken = await initializeFcmToken(vapidKey: widget.vapidKey);
+        } catch (e, s) {
+          log<FirebaseNotificationsHandler>(error: e, stackTrace: s);
+        }
       }
 
       if (widget.handleInitialMessage) {
