@@ -573,6 +573,12 @@ class _FirebaseNotificationsHandlerState extends State<FirebaseNotificationsHand
     final isInitialized = _fcmToken != null;
 
     try {
+      // On iOS, check APNS token first — if null we're on a simulator and
+      // FCM token fetching will fail with apns-token-not-set.
+      if (!kIsWeb && Platform.isIOS) {
+        final apnsToken = await _fcm.getAPNSToken();
+        if (apnsToken == null) return null;
+      }
       _fcmToken ??= await _fcm.getToken(vapidKey: vapidKey);
     } catch (e, s) {
       log<FirebaseNotificationsHandler>(error: e, stackTrace: s);
