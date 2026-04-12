@@ -1,3 +1,8 @@
+# [2.0.2+2]
+
+* Pinned `firebase_messaging` to `16.1.1`
+* Pinned example `firebase_core` to `4.4.0`
+
 # [2.0.2+1]
 
 * Updated dependency to latest release
