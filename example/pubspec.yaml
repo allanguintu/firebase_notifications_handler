@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  firebase_core: ^4.11.0
-  easy_container: ^1.0.5+1
+  firebase_core: ^4.15.0
+  easy_container: ^1.2.4
   url_launcher: ^6.3.2
   firebase_notifications_handler:
     path: "../"
