@@ -579,6 +579,8 @@ class _FirebaseNotificationsHandlerState extends State<FirebaseNotificationsHand
         final apnsToken = await _fcm.getAPNSToken();
         if (apnsToken == null) return null;
       }
+      // Preserve the public Future<String?> contract; register() is event-only.
+      // ignore: deprecated_member_use
       _fcmToken ??= await _fcm.getToken(vapidKey: vapidKey);
     } catch (e, s) {
       log<FirebaseNotificationsHandler>(error: e, stackTrace: s);
@@ -594,7 +596,7 @@ class _FirebaseNotificationsHandlerState extends State<FirebaseNotificationsHand
       }
     }
 
-    _fcmTokenStreamSubscription = _fcm.onTokenRefresh.listen((token) {
+    _fcmTokenStreamSubscription = _fcm.onRegistered.listen((token) {
       if (_fcmToken == token) return;
 
       _fcmToken = token;
