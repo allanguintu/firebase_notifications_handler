@@ -2,6 +2,7 @@
 
 * Require Firebase Messaging 17.0.1 and update the example to Firebase Core 5.1.0.
 * Reviewed FlutterFire major release notes: Android minSdk 24; Apple SDK 13 for Swift Package Manager, CocoaPods remains on 12.19.x.
+* Preserve FCM token lookup/refresh: the new registration API emits installation IDs and requires a separate backend migration.
 * Notification handling APIs and behavior remain unchanged.
 
 # [2.0.2+2]

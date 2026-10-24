@@ -596,7 +596,9 @@ class _FirebaseNotificationsHandlerState extends State<FirebaseNotificationsHand
       }
     }
 
-    _fcmTokenStreamSubscription = _fcm.onRegistered.listen((token) {
+    // onRegistered emits FIDs, not the FCM tokens consumed by this API.
+    // ignore: deprecated_member_use
+    _fcmTokenStreamSubscription = _fcm.onTokenRefresh.listen((token) {
       if (_fcmToken == token) return;
 
       _fcmToken = token;
